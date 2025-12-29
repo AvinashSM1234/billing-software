@@ -2,6 +2,7 @@ package in.avinash.billingSoftware.serviceImpl;
 
 import in.avinash.billingSoftware.service.FileUploadService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     @Value("${aws.bucket.name}")
     private String bucketName;
 
+    @Autowired
     private S3Client s3Client;
 
     @Override
